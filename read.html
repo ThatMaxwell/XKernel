@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XKernel Papers</title>
+<meta name="description" content="The XKernel papers: manifesto, architecture, performance, design and roadmap.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  body { font-size: 18px; }
+  .progress { position: fixed; left: 0; top: 0; height: 2px; width: 100%; background: var(--fg); transform: scaleX(0); transform-origin: left; z-index: 60; }
+  .reader { position: relative; z-index: 2; display: grid; grid-template-columns: 240px minmax(0, 720px); gap: clamp(32px, 6vw, 96px);
+    justify-content: center; padding: 120px var(--gutter) 120px; }
+  .toc { position: sticky; top: 100px; align-self: start; font-size: 14px; }
+  .toc p { font: 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--faint); margin: 0 0 14px; }
+  .toc a { display: grid; grid-template-columns: 28px 1fr; padding: 8px 0; text-decoration: none; color: var(--mute); border-top: 1px solid var(--line); transition: color .2s; }
+  .toc a span { font: 11px var(--mono); color: var(--faint); padding-top: 3px; }
+  .toc a:hover, .toc a.on { color: var(--fg); }
+  .toc a.on span { color: var(--ice); }
+  article { min-height: 60vh; opacity: 0; transform: translateY(16px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+  article.in { opacity: 1; transform: none; }
+  article h1 { font-size: clamp(40px, 6vw, 76px); margin: 0 0 18px; }
+  article h1 + p em, article > p:first-of-type em { color: var(--mute); }
+  article h2 { font-size: clamp(26px, 3vw, 36px); margin: 64px 0 18px; letter-spacing: -.025em; }
+  article h3 { font-size: 20px; font-weight: 500; margin: 36px 0 10px; letter-spacing: -.01em; }
+  article p, article li { color: rgba(242,242,240,.78); }
+  article strong { color: var(--fg); font-weight: 500; }
+  article em { font-style: italic; font-weight: 300; color: var(--fg); }
+  article a { color: var(--ice); text-underline-offset: 3px; }
+  article hr { border: 0; border-top: 1px solid var(--line); margin: 56px 0; }
+  article blockquote { margin: 28px 0; padding: 4px 0 4px 22px; border-left: 1px solid var(--fg); font-size: 22px; font-weight: 300; color: var(--fg); }
+  article blockquote p { color: var(--fg); }
+  article code { font: 14px var(--mono); background: rgba(255,255,255,.06); padding: 2px 6px; border-radius: 5px; }
+  article pre { background: rgba(255,255,255,.035); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; overflow-x: auto; }
+  article pre code { background: none; padding: 0; font-size: 13px; line-height: 1.55; color: #d6d9de; }
+  article table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; display: block; overflow-x: auto; }
+  article th, article td { text-align: left; padding: 10px 14px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  article th { font: 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--faint); font-weight: 400; }
+  article td { color: rgba(242,242,240,.78); }
+  .pager { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-top: 80px; }
+  .pager a { display: grid; gap: 6px; padding: 22px 24px; background: #030304; text-decoration: none; transition: background .3s; }
+  .pager a:hover { background: #0b0c0f; }
+  .pager a span { font: 11px var(--mono); color: var(--faint); letter-spacing: .1em; text-transform: uppercase; }
+  .pager a.next { text-align: right; }
+  .pager a.empty { pointer-events: none; }
+  .err { color: #ff8a8a; }
+  @media (max-width: 900px) { .reader { grid-template-columns: 1fr; padding-top: 96px; } .toc { position: static; } }
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav scrolled">
+  <a class="brand" href="./" aria-label="XKernel home"><img src="assets/logo-light.svg" alt=""><span>XKernel</span></a>
+  <nav aria-label="Site">
+    <a href="./#papers">Papers</a>
+    <a class="nav-cta" href="demo/">Showcase</a>
+    <a class="nav-gh" href="https://github.com/ThatMaxwell/XKernel">GitHub</a>
+  </nav>
+</header>
+
+<div class="reader">
+  <aside class="toc" aria-label="Papers"><p>Papers</p><div id="toc"></div></aside>
+  <main>
+    <article id="paper"></article>
+    <nav class="pager" id="pager" aria-label="Next and previous paper"></nav>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script>
+const PAPERS = [
+  { id: 'plan', n: '·', title: 'The Plan', file: 'PLAN.md' },
+  { id: '01-manifesto', n: 'I', title: 'XKernel, Open', file: 'papers/01-manifesto.md' },
+  { id: '02-architecture', n: 'II', title: 'The Shape of an Empty House', file: 'papers/02-architecture.md' },
+  { id: '03-120fps', n: 'III', title: 'One Hundred and Twenty', file: 'papers/03-120fps.md' },
+  { id: '04-design', n: 'IV', title: 'Wallpaper and Quiet', file: 'papers/04-design.md' },
+  { id: '05-roadmap', n: 'V', title: 'From a Pi to the Beast', file: 'papers/05-roadmap.md' },
+];
+const id = new URLSearchParams(location.search).get('p') || '01-manifesto';
+const i = Math.max(0, PAPERS.findIndex(p => p.id === id));
+const cur = PAPERS[i];
+
+document.getElementById('toc').innerHTML = PAPERS.map(p =>
+  `<a href="?p=${p.id}" class="${p === cur ? 'on' : ''}"><span>${p.n}</span>${p.title}</a>`).join('');
+document.title = `${cur.title} · XKernel`;
+
+const prev = PAPERS[i - 1], next = PAPERS[i + 1];
+document.getElementById('pager').innerHTML =
+  (prev ? `<a href="?p=${prev.id}"><span>Previous</span>${prev.title}</a>` : '<a class="empty"></a>') +
+  (next ? `<a class="next" href="?p=${next.id}"><span>Next</span>${next.title}</a>` : '<a class="next" href="demo/"><span>Then</span>Boot the showcase</a>');
+
+const art = document.getElementById('paper');
+fetch(cur.file).then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+  .then(md => {
+    // links between papers point at the reader instead of raw markdown
+    md = md.replace(/\]\((?:\.\.\/)?(?:papers\/)?(0\d-[\w-]+)\.md\)/g, '](?p=$1)').replace(/\]\(PLAN\.md\)/g, '](?p=plan)');
+    art.innerHTML = marked.parse(md);
+    requestAnimationFrame(() => art.classList.add('in'));
+  })
+  .catch(() => { art.innerHTML = `<p class="err">This paper couldn't be loaded. Read it on <a href="https://github.com/ThatMaxwell/XKernel/blob/main/${cur.file}">GitHub</a>.</p>`; art.classList.add('in'); });
+
+const bar = document.querySelector('.progress');
+addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - innerHeight;
+  bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+}, { passive: true });
+</script>
+</body>
+</html>

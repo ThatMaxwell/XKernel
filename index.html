@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XKernel</title>
+<meta name="description" content="XKernel turns your whole machine into a multi-VM. Every operating system you use, tiled over your wallpaper, at full speed. Nothing else.">
+<meta property="og:title" content="XKernel, open.">
+<meta property="og:description" content="Your whole machine, as a multi-VM.">
+<meta property="og:image" content="assets/showcase.jpg">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- first visit: the XKernel first boot -->
+<div id="intro" aria-hidden="true">
+  <img class="intro-logo" src="assets/logo-light.svg" alt="">
+  <div class="intro-words"><div class="w1">Welcome.</div><div class="w2">You are now inside XKernel.</div></div>
+  <button class="intro-skip" type="button">Skip</button>
+</div>
+
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="XKernel home"><img src="assets/logo-light.svg" alt=""><span>XKernel</span></a>
+  <nav aria-label="Sections">
+    <a href="#idea">Idea</a>
+    <a href="#speed">Speed</a>
+    <a href="#papers">Papers</a>
+    <a href="#roadmap">Roadmap</a>
+    <a class="nav-cta" href="demo/">Showcase</a>
+    <a class="nav-gh" href="https://github.com/ThatMaxwell/XKernel" aria-label="GitHub">GitHub</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ hero ============ -->
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="tag mono">XKernel, open.</p>
+      <h1 class="split">Your whole machine,<br>as a multi‑VM.</h1>
+      <p class="lede">Every operating system you use runs side by side, at full speed, over your wallpaper. No bar. No dock. No assistant. Just you and your machines.</p>
+      <div class="cta">
+        <a class="btn" href="demo/">Boot the showcase</a>
+        <a class="btn ghost" href="read.html?p=01-manifesto">Read the manifesto</a>
+      </div>
+      <p class="status mono"><span class="dot"></span>Planning · Stage 0 · open source from day one</p>
+    </div>
+    <div class="hero-screen" aria-hidden="true">
+      <div class="screen">
+        <div class="t t1"><div class="term"><b>maxwell@arch</b>:~$ uname -sr<br>Linux 6.12.8 (XKernel guest)<br><b>maxwell@arch</b>:~$ <span class="cursor"></span></div></div>
+        <div class="t t2"><div class="winmock"><div class="note">Windows</div><div class="taskbar"><i></i><i></i><i></i><i></i></div></div></div>
+        <div class="t t3"><div class="haikumock"><span>Tracker</span></div></div>
+        <div class="t t4"><div class="templemock"><div class="tb">TempleOS</div>C:/Home&gt; _</div><span class="tribute">✝</span></div>
+      </div>
+    </div>
+    <div class="scroll-hint mono" aria-hidden="true">scroll</div>
+  </section>
+
+  <!-- ============ subtraction ============ -->
+  <section class="subtract" id="idea">
+    <div class="sub-pin">
+      <div class="sub-copy">
+        <p class="kicker mono">01 · Subtraction</p>
+        <h2>What if the operating system did almost nothing?</h2>
+        <ul class="strike">
+          <li>The bar at the top.</li>
+          <li>The dock at the bottom.</li>
+          <li>The search box that searches the internet.</li>
+          <li>The assistant nobody invited.</li>
+          <li>The news feed next to the weather.</li>
+        </ul>
+        <p class="sub-end">Everything that took the machine away from you, gone. What's left is your wallpaper, and the quiet.</p>
+      </div>
+      <div class="desk" aria-hidden="true">
+        <div class="d-bar"><span>File</span><span>Edit</span><span>View</span><em>12:04</em></div>
+        <div class="d-dock"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="d-search">Search the web and Windows</div>
+        <div class="d-assist"><b>Hi! I'm your assistant.</b><br>Want me to summarize your desktop?</div>
+        <div class="d-feed"><b>Weather · 21°</b><span>Top stories for you</span><span>Celebrity news</span><span>Sponsored</span></div>
+        <div class="d-icons"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ tiles ============ -->
+  <section class="tiling">
+    <div class="tile-pin">
+      <div class="screen big" aria-hidden="true">
+        <div class="bt b1"><div class="term"><b>maxwell@arch</b>:~$ fastfetch<br>  OS      Arch Linux<br>  Kernel  linux 6.12 (KVM)<br>  CPU     8 vCPUs, pinned<br>  GPU     virtio-gpu<br><b>maxwell@arch</b>:~$ <span class="cursor"></span></div><span class="lbl mono">Linux</span></div>
+        <div class="bt b2"><div class="winmock"><div class="note">Notepad</div><div class="taskbar"><i></i><i></i><i></i><i></i></div></div><span class="lbl mono">Windows · GPU passthrough</span></div>
+        <div class="bt b3"><div class="haikumock"><span>Tracker</span></div><span class="lbl mono">Haiku</span></div>
+        <div class="bt b4"><div class="templemock"><div class="tb">TempleOS</div>C:/Home&gt; Dir;<br>Doc  Demo  Apps<br>C:/Home&gt; _</div><span class="tribute">✝</span><span class="lbl mono">TempleOS</span></div>
+      </div>
+      <div class="tile-copy">
+        <p class="kicker mono">02 · Kernels</p>
+        <h2>Every OS is a guest of equal rank.</h2>
+        <p>There is no main operating system. Each one is a <em>Kernel</em>, running on real hardware through Linux's KVM, tiled the way Hyprland tiles windows. Windows on the left, Linux on the right, Haiku in the corner because you felt like it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ speed ============ -->
+  <section class="speed" id="speed">
+    <div class="wrap">
+      <p class="kicker mono">03 · Speed</p>
+      <h2 class="quote">A virtual machine isn't slow because virtualization is slow.<br><span>It's slow because it's starved.</span></h2>
+      <div class="speed-grid">
+        <div class="stack" aria-label="XKernel architecture, top to bottom">
+          <div class="layer l6"><b>Kernels</b><span>Windows · Linux · Haiku · OpenIndiana · …</span></div>
+          <div class="layer l5"><b>xsh</b><span>the shell, only for XKernel itself</span></div>
+          <div class="layer l4"><b>xcomp</b><span>tiling compositor, a Hyprland fork</span></div>
+          <div class="layer l3"><b>xvmd</b><span>starts, saves and resumes every Kernel</span></div>
+          <div class="layer l2"><b>Linux · KVM · VFIO</b><span>upstream LTS plus a small patch stack</span></div>
+          <div class="layer l1"><b>Your hardware</b><span>CPU · IOMMU · GPU · NVMe</span></div>
+        </div>
+        <div class="facts">
+          <div class="fact"><span class="mono">CPU</span><p>Guest code runs directly on your CPU. Pinned cores, huge pages, no host noise.</p></div>
+          <div class="fact"><span class="mono">GPU</span><p>A real GPU, not an emulated one. VFIO passthrough, or SR-IOV to share one GPU across tiles.</p></div>
+          <div class="fact"><span class="mono">Frames</span><p>Looking Glass carries frames through shared memory into your tiles. No encoding, no copies over a network.</p></div>
+          <div class="fact"><span class="mono">Host</span><p>The host draws a blurred wallpaper, cached once. That's its whole job. Target: close to 120 fps inside a Kernel.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ always there ============ -->
+  <section class="always">
+    <div class="wrap two">
+      <div>
+        <p class="kicker mono">04 · Always there</p>
+        <h2>You don't boot your operating systems. You continue them.</h2>
+        <p>Close the lid and every Kernel is saved, mid-sentence, mid-compile, mid-game. Open it, and each tile sharpens out of the wallpaper exactly as you left it.</p>
+      </div>
+      <div class="sleepdemo" aria-hidden="true">
+        <div class="screen">
+          <div class="st s1"><div class="term"><b>~</b>$ make -j8<br>[ 61%] Building CXX object<br>[ 62%] Building CXX object<span class="cursor"></span></div></div>
+          <div class="st s2"><div class="winmock"><div class="note">Draft.txt</div><div class="taskbar"><i></i><i></i><i></i></div></div></div>
+          <div class="st s3"><div class="haikumock"><span>Tracker</span></div></div>
+          <div class="asleep"><img src="assets/logo-light.svg" alt=""><span>Your kernels are asleep.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ run anything ============ -->
+  <section class="anything">
+    <div class="wrap">
+      <p class="kicker mono">05 · Run anything</p>
+      <h2>Linux runs. So every distro runs.</h2>
+      <p class="narrow">And next to it: the BSDs, illumos, Haiku, Plan 9, ReactOS, retro systems and Windows, if you bring your own license. Nothing to brick: a broken Kernel is one tile, not your machine.</p>
+    </div>
+    <div class="marquee" aria-hidden="true"><div class="row">Arch · NixOS · Debian · Fedora · Gentoo · Void · Alpine · Ubuntu · openSUSE · Mint · Slackware · Kali · Pop!_OS · EndeavourOS · Manjaro · Tiny Core · Damn Small Linux · Buildroot ·&nbsp;</div></div>
+    <div class="marquee rev" aria-hidden="true"><div class="row">FreeBSD · OpenBSD · NetBSD · DragonFly BSD · OpenIndiana · OmniOS · Haiku · 9front · ReactOS · SerenityOS · Redox · KolibriOS · FreeDOS · HelenOS · Minix 3 · AROS · TempleOS ✝ · Windows ·&nbsp;</div></div>
+    <p class="wrap fine mono">Not macOS or iOS. Apple's license only allows macOS on Apple hardware, and iOS can't be virtualized legally.</p>
+  </section>
+
+  <!-- ============ showcase ============ -->
+  <section class="showcase">
+    <div class="wrap">
+      <p class="kicker mono">06 · It already boots</p>
+      <h2>Real operating systems, in a browser tab.</h2>
+      <p class="narrow">The showcase boots Buildroot Linux, KolibriOS, FreeDOS, Tiny Core, Damn Small Linux and HelenOS for real, tiled over your wallpaper. Put them to sleep, reload the page, and they continue where they were. It runs on v86 today. XKernel will run it on KVM.</p>
+      <a class="shot" href="demo/"><img src="assets/showcase.jpg" alt="The XKernel showcase running Buildroot Linux, KolibriOS and FreeDOS side by side" loading="lazy"><span class="btn">Boot the showcase</span></a>
+    </div>
+  </section>
+
+  <!-- ============ papers ============ -->
+  <section class="papers" id="papers">
+    <div class="wrap">
+      <p class="kicker mono">07 · Papers</p>
+      <h2>Five papers. One plan.</h2>
+      <div class="paper-list">
+        <a class="paper" href="read.html?p=01-manifesto"><span class="n mono">I</span><b>XKernel, Open</b><span>The manifesto. Why your machine should be almost empty.</span></a>
+        <a class="paper" href="read.html?p=02-architecture"><span class="n mono">II</span><b>The Shape of an Empty House</b><span>Architecture: Linux and KVM, xvmd, xcomp, xsh, xkernel.conf.</span></a>
+        <a class="paper" href="read.html?p=03-120fps"><span class="n mono">III</span><b>One Hundred and Twenty</b><span>How a VM gets near 120 fps, and where the limits are.</span></a>
+        <a class="paper" href="read.html?p=04-design"><span class="n mono">IV</span><b>Wallpaper and Quiet</b><span>Design, motion, voice, tributes and the mark.</span></a>
+        <a class="paper" href="read.html?p=05-roadmap"><span class="n mono">V</span><b>From a Pi to the Beast</b><span>The roadmap, stage by stage.</span></a>
+        <a class="paper plan" href="read.html?p=plan"><span class="n mono">·</span><b>The Plan</b><span>Everything on one page. Read this first.</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ roadmap ============ -->
+  <section class="roadmap" id="roadmap">
+    <div class="wrap">
+      <p class="kicker mono">08 · Roadmap</p>
+      <h2>From a Pi to the beast.</h2>
+    </div>
+    <div class="track-wrap">
+      <ol class="track">
+        <li class="now"><span class="mono">0</span><b>The workshop</b><p>A Raspberry Pi, a build, a stock kernel that boots.</p></li>
+        <li><span class="mono">1</span><b>Our kernel boots</b><p>The patch stack starts. KVM is there.</p></li>
+        <li><span class="mono">2</span><b>One Kernel</b><p>One guest, fullscreen, usable.</p></li>
+        <li><span class="mono">3</span><b>Tiles</b><p>The Hyprland fork, the blurred wallpaper.</p></li>
+        <li><span class="mono">4</span><b>xsh</b><p>Talk to XKernel.</p></li>
+        <li><span class="mono">5</span><b>Always there</b><p>Save and resume everything.</p></li>
+        <li><span class="mono">6</span><b>Windows</b><p>UEFI, TPM, virtio drivers.</p></li>
+        <li><span class="mono">7</span><b>Speed</b><p>VFIO, SR-IOV, Looking Glass, benchmarks.</p></li>
+        <li><span class="mono">8</span><b>One file</b><p>xkernel.conf describes the machine.</p></li>
+        <li><span class="mono">9</span><b>More Kernels</b><p>BSDs, illumos, Haiku and friends, tested.</p></li>
+        <li><span class="mono">10</span><b>1.0</b><p>XKernel, open.</p></li>
+      </ol>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img class="foot-mark" src="assets/logo-light.svg" alt="XKernel">
+    <p class="beast">You can run this beast. me, Maxwell, cant.</p>
+    <div class="foot-row">
+      <div class="lines mono">
+        <span>"How is this gonna be true? Who knows. I don't." · the old notes</span>
+        <span>"Someone told me how. His name starts with a C." · the new ones</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/ThatMaxwell/XKernel">GitHub</a>
+        <a href="read.html?p=plan">Plan</a>
+        <a href="demo/">Showcase</a>
+        <a href="https://github.com/ThatMaxwell/XKernel/blob/main/NOTICE">Licenses</a>
+      </div>
+    </div>
+    <p class="fine mono">Apache-2.0 · Built on Linux, KVM, QEMU, Looking Glass and Hyprland. Not affiliated with any of them.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>

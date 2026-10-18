@@ -1,0 +1,36 @@
+XKernel
+Copyright 2026 The XKernel Authors
+
+XKernel's own work in this repository (the papers, the plan, the website and the
+showcase code) is licensed under the Apache License, Version 2.0. See LICENSE.
+Future kernel patches will be GPL-2.0, as the Linux kernel requires.
+
+The browser showcase in demo/ also ships the following third-party software, each
+under its own license. Source code for each is available at the link given.
+
+v86 (demo/v86/libv86.js, v86.wasm), Fabian Hemmer and contributors
+  BSD 2-Clause License, see demo/v86/LICENSE.
+  Source: https://github.com/copy/v86
+
+SeaBIOS (demo/v86/seabios.bin) and the VGA BIOS (demo/v86/vgabios.bin)
+  GNU LGPL v3.
+  Source: https://www.seabios.org
+
+Disk images in demo/images/, from v86's public image set, all unmodified:
+  Buildroot Linux (buildroot-bzimage.bin): Linux kernel and BusyBox, GPL-2.0.
+    Source: https://buildroot.org, https://www.kernel.org, https://busybox.net
+  Tiny Core Linux 11.0 (TinyCore-11.0.iso): GPL-2.0.
+    Source: http://tinycorelinux.net
+  Damn Small Linux 4.11 RC2 (dsl-4.11.rc2.iso): GPL-2.0 and others.
+    Source: https://www.damnsmalllinux.org
+  KolibriOS (kolibri.img): GPL-2.0.
+    Source: https://kolibrios.org
+  FreeDOS (freedos722.img): GPL-2.0 and others.
+    Source: https://www.freedos.org
+  HelenOS 0.14.1 (HelenOS-0.14.1-ia32.iso): BSD-3-Clause and others.
+    Source: https://www.helenos.org
+
+Mock tiles in the showcase (Windows, TempleOS, OpenIndiana, Haiku, the BSDs, ReactOS,
+SerenityOS and Linux distributions) are drawings, not the real software, and include
+no code from those projects. All names are trademarks of their respective owners.
+XKernel is not affiliated with or endorsed by any of them.
