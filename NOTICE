@@ -1,8 +1,8 @@
 XKernel
-Copyright 2026 The XKernel Authors
+Released into the public domain.
 
 XKernel's own work in this repository (the papers, the plan, the website and the
-showcase code) is licensed under the Apache License, Version 2.0. See LICENSE.
+showcase code) is released into the public domain under the Unlicense. See LICENSE.
 Future kernel patches will be GPL-2.0, as the Linux kernel requires.
 
 The browser showcase in demo/ also ships the following third-party software, each

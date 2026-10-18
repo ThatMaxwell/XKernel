@@ -61,5 +61,5 @@ Then open http://localhost:8080/demo/.
 
 ## License
 
-[Apache-2.0](LICENSE). Future kernel patches will be GPL-2.0, as Linux requires. Third-party software in the showcase is listed in [NOTICE](NOTICE).
+Public domain, under the [Unlicense](LICENSE): do anything with it, no credit needed. Future kernel patches will be GPL-2.0, as Linux requires. Third-party software in the showcase is listed in [NOTICE](NOTICE).
 
