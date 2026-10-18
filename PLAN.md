@@ -70,7 +70,6 @@ Full detail is in [papers/05-roadmap.md](papers/05-roadmap.md).
 - **Logo:** the X mark (`assets/logo.svg`): four bracket corners around a diamond with a white core. It's the logo the first-boot welcome collapses into.
 - **Tone:** silent, calm, sleek. Never loud.
 - **README must include:** "You can run this beast. me, Maxwell, cant."
-- **Catchphrase history:** the early papers said "How is this gonna be true? Who knows. I don't." Now: "Someone told me how. His name starts with a C."
 
 ## Related
 

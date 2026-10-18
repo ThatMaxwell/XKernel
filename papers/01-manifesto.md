@@ -2,7 +2,7 @@
 
 *Paper 1 of 5: the manifesto*
 
-*Maxwell, with notes from Claude*
+*Maxwell*
 
 ---
 
@@ -61,13 +61,11 @@ The fastest host is the one that isn't doing anything.
 
 ## V. Why we fork instead of starting over
 
-The first version of this idea, back when it was called MultiVM, had a catchphrase in its notes: *"How is this gonna be true? Who knows. I don't."*
+The first version of this idea was called MultiVM, and it had no answer to the obvious question: how?
 
 Writing a kernel from scratch is a lifetime of work before you even reach the interesting part. You'd spend years writing drivers for disks, network cards, USB, power management and a thousand chipsets, just to boot. A from-scratch kernel would still be learning to boot by the time XKernel should be shipping.
 
 The answer was always there: **the Linux kernel is open source.** Anyone can take it, study it, change it and share the result. KVM, the engine that runs virtual machines at native speed, is already inside it. Hyprland, a beautiful tiling compositor, is open source too. So are QEMU and Looking Glass. The pieces of XKernel already exist, built by thousands of people over decades.
-
-So the catchphrase changed: *"Someone told me how. His name starts with a C."*
 
 XKernel is built the way most great open source is built: by standing on what exists and adding what's missing. We call this the **Fork Arc**. The rule that keeps it honest is to **never hard-fork.** XKernel's changes live as a small, clean stack of patches on top of upstream Linux, rebased with every release. That way every security fix and every new driver the Linux community ships flows into XKernel for free. We take a lot from open source, so we stay compatible with it and give back.
 

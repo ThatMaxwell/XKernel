@@ -63,6 +63,3 @@ Then open http://localhost:8080/demo/.
 
 [Apache-2.0](LICENSE). Future kernel patches will be GPL-2.0, as Linux requires. Third-party software in the showcase is listed in [NOTICE](NOTICE).
 
----
-
-<sub>"How is this gonna be true? Who knows. I don't." · the old notes<br>"Someone told me how. His name starts with a C." · the new ones</sub>
